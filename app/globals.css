@@ -1,0 +1,120 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+
+@font-face {
+  font-family: "Yekan";
+  src: url("../public/Fonts/B_Yekan/Yekan.ttf");
+}
+
+@font-face {
+  font-family: "Sans";
+  src: url("../public/Fonts/IranSansX/iransansXFamily/IRANSansX-Regular.ttf");
+}
+
+@font-face {
+  font-family: "SansNumber";
+  src: url("../public/Fonts/IranSansX/FarsiNumerals/IRANSansXFaNum-Regular.ttf");
+}
+
+
+@font-face {
+  font-family: "nastaliq";
+  src: url("../public/Fonts/IranNastaliq/IranNastaliq.ttf");
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: "SansNumber";
+}
+
+.nastaliqFont {
+  font-family: "nastaliq" !important;
+}
+
+.my-toast {
+  font-family: "SansNumber" !important;
+  /* force it */
+  background-color: #fff !important;
+  color: #000 !important;
+  padding: 1rem !important;
+  border-radius: 12px !important;
+  text-align: center !important;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2) !important;
+  font-size: 1rem !important;
+  width: 100% !important;
+  font-weight: 400 !important;
+}
+
+.swiper-slide {
+  border-radius: 18px !important;
+}
+
+.swiper-pagination {
+  display: flex;
+  margin-top: 1em !important;
+  position: static !important;
+}
+
+.swiper-pagination-bullet {
+  /* background: #b8b8b8 !important; */
+  width: 10px !important;
+  height: 10px !important;
+}
+
+.swiper-pagination-bullet-active {
+  background: #48484D !important;
+  width: 27px !important;
+  height: 10px !important;
+  border-radius: 8px !important;
+}
+
+
+
+.categories-scroll {
+  animation: scrollLeft 50s linear infinite;
+}
+
+@keyframes scrollLeft {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for Firefox */
+html {
+  scrollbar-width: none;
+}
+
+/* Hide scrollbar for IE & Edge */
+body {
+  -ms-overflow-style: none;
+}
