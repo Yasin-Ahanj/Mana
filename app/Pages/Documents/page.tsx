@@ -1,74 +1,72 @@
-import Navbar from "@/app/Components/Navbar/page"
-import NavbarLogin from "@/app/Components/NavbarLogin/page"
 import NavbarPersonalInfo from "@/app/Components/NavbarPersonalInfo/page"
 import PersonalId from "@/app/Components/PesonalId/page"
 import TableHeader from "@/app/Components/TableHeader/Page"
 import TableMaker from "@/app/Components/TableMaker/page"
 
-const Askfordata = () => {
-    const TableData = {
-        tableInfo: {
-            nameOfColumns: ["شماره موبایل", "کد ملی", "نام", "تاریخ"],
-            countOfColumns: 4,
-            orders: ["mobile", "national_code", "name", "date"],
-            linksName: []
 
+const Documents = () => {
+        const TableData = {
+        tableInfo : {
+            nameOfColumns: ["فایل مدرک", "کد ملی"  , "نام" , "تاریخ"],
+            countOfColumns: 4,
+            orders: ["document_file" ,  "national_code" , "name" , "date"]
         },
-        tableData: [
+        tableData : [
             {
                 date: 1995,
                 name: "elahe",
                 national_code: "245754854",
-                mobile: "0914636241"
+                document_file: "0914636241"
             },
             {
                 date: 1985,
                 name: "elahe",
                 national_code: "245754854",
-                mobile: "0914636241"
+                document_file: "0914636241"
             },
             {
                 date: 1995,
                 name: "elahe",
                 national_code: "245754854",
-                mobile: "0914636241"
+                document_file: "0914636241"
             },
             {
                 date: 1995,
                 name: "elahe",
                 national_code: "245754854",
-                mobile: "0914636241"
+                document_file: "0914636241"
             },
             {
                 date: 1995,
                 name: "elahe",
                 national_code: "245754854",
-                mobile: "0914636241"
+                document_file: "0914636241"
             },
             {
                 date: 1995,
                 name: "elahe",
                 national_code: "245754854",
-                mobile: "0914636241"
+                document_file: "0914636241"
             },
             {
                 date: 1995,
                 name: "elahe",
                 national_code: "245754854",
-                mobile: "0914636241"
+                document_file: "0914636241"
             },
 
 
         ]
     }
 
-    return (
+    return(
         <div>
             <NavbarPersonalInfo />
-            <PersonalId title="استعلام اطلاعات شخص" placeholder="کدملی / شماره موبایل / نام" />
-            <TableHeader title="کلیه ثبت نامی ها" description="" />
-            <TableMaker data={TableData} />
+            <PersonalId title="مشاهده کل مدارک" placeholder="کد ملی/نام" />
+            <TableHeader title="کلیه مدارک صادر شده"/>
+            <TableMaker data={TableData}/>
         </div>
     )
-}
-export default Askfordata
+} 
+
+export default Documents

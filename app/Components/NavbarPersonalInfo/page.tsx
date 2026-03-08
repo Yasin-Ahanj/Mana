@@ -16,7 +16,7 @@ const NavbarPersonalInfo = () => {
                     size={16}
                     color="#808080"
                     />
-                <span className="text-[#808080]">
+                <span className="text-[#808080]" onClick={handleBack}>
                     بازگشت
                 </span>
             </div>

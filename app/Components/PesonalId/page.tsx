@@ -9,7 +9,7 @@ type SearchProps = {
 
 const PersonalId = ({title , placeholder} : SearchProps) => {
     return (
-        <div className="w-[90%] mt-[1em] mx-auto text-right">
+        <div className="w-[90%] mt-[2em] mx-auto text-right">
             <h1 className="font-semibold">{title}</h1>
             <div className="flex justify-between  mt-[1em] border rounded-[12px] items-center p-[0.5em]">
                 <SearchNormal1
