@@ -5,6 +5,7 @@ import TextInput from "@/app/Components/TextInput/page"
 import { useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import { useRouter, useSearchParams } from "next/navigation";
+import { DocumentUpload } from "iconsax-reactjs";
 
 const Consulting = () => {
     const router = useRouter();
@@ -75,7 +76,7 @@ const Consulting = () => {
                         { value: "2", label: "زن" }
                     ]}
                     onChange={(e) => setGender(e.target.value)}
-                    value={mobile}
+                    value={gender}
                     style="w-[100%] border p-4 appearance-none text-center rounded-[12px]"
                     label="جنسیت"
                     name="gender"
@@ -102,11 +103,16 @@ const Consulting = () => {
                         اطلاعات آموزش خود را در اختیار هیچ شخص سومی قرار ندهید .شخص سوم اعم از دوستان و افراد نزدیک و کافی نت ها و ...
                     </p>
                 </div>
-                </div>
-            
-</div> 
-            )
-               
+                <DocumentUpload 
+                    size={32}
+                    color="#F89535"
+                    
+                />
+            </div>
+
+        </div>
+    )
+
 
 }
 export default Consulting
