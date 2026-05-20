@@ -48,8 +48,8 @@ const Categories = () => {
             <h1 className="text-right mb-4 text-lg font-semibold">کتگوری های آموزشی</h1>
             {categories.length === 0 ? (
                 <div className="flex gap-4  justify-end">
-                    {[...Array(12)].map((_, i) => (
-                        <Skeleton key={i} className="w-[130px] h-[100px] rounded-[20px]" />
+                    {[...Array(3)].map((_, i) => (
+                        <Skeleton key={i} className="w-[330px] h-[50px] rounded-[20px]" />
                     ))}
                 </div>
             ) : (

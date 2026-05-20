@@ -1,92 +1,79 @@
 import React from "react";
 
 // تایپ داده‌های ورودی
+type TableRow = {
+    date: number;
+    name: string;
+    national_code: string;
+    mobile: string;
+    [key: string]: any; // برای دسترسی داینامیک به ستون‌ها
+};
+
 type TableData = {
     tableInfo: {
-        nameOfColumns: string[]; // آرایه‌ای از نام ستون‌ها
-        countOfColumns: number;  // تعداد ستون‌ها
+        nameOfColumns: string[];
+        countOfColumns: number;
         orders: string[];
         linksName: string[];
     };
-    tableData: {
-        date: number;
-        name: string;
-        national_code: string;
-        mobile: string;
-    }[]; // آرایه‌ای از داده‌ها برای هر ردیف
+    tableData: TableRow[];
 };
 
 // کامپوننت TableMaker
 const TableMaker = ({ data }: { data: TableData }) => {
-    // داده‌های جدول
+
     const { tableInfo, tableData } = data;
 
     return (
         <div className="w-[90%] mt-[1em] mx-auto border rounded-[12px]">
-            {/* جدول */}
-            <table className="w-full  rounded-[12px] overflow-hidden border">
-                {/* سرستون‌ها */}
+            <table className="w-full rounded-[12px] overflow-hidden border">
+
+                {/* Table Header */}
                 <thead>
                     <tr>
                         {tableInfo.nameOfColumns.map((column, index) => (
-                            <th key={index} className="p-[8px] border bg-[#000]/6">
+                            <th
+                                key={index}
+                                className="p-[8px] border bg-[#000]/6 text-center"
+                            >
                                 {column}
                             </th>
                         ))}
                     </tr>
                 </thead>
 
-                {/* داده‌های جدول */}
+                {/* Table Body */}
                 <tbody>
                     {tableData.map((row, rowIndex) => (
                         <tr key={rowIndex}>
-                            {/* {
-                                tableInfo.linksName.map((item , index) => (
-                                    
-                                    row[item]
-                                ))
-                            } */}
 
-                            {
-                                tableInfo.orders.map((value, index) => (
+                            {tableInfo.orders.map((value, index) => {
 
+                                const cellValue = row[value];
 
-
-                                    <td className="p-[8px] border text-center" key={index}>
-                                        {
-                                            tableInfo.linksName.length == 0 ? <span>{row[value]}</span> : (
-
-                                                tableInfo.linksName.map((item , index) => (
-
-                                                    // console.log(item)
-
-                                                    value == item ? (
-                                                        <a href={row[value]}>دانلود</a>
-                                                        
-
-
-                                                    ) : (
-
-                                                        <span>
-                                                            {row[value]}
-                                                        </span>
-                                                    )
-
-                                                    
-
-                                                ))
-                                            )
-                                        }
-
-
+                                return (
+                                    <td
+                                        key={index}
+                                        className="p-[8px] border text-center"
+                                    >
+                                        {tableInfo.linksName.includes(value) ? (
+                                            <a
+                                                href={cellValue}
+                                                className="text-blue-600 underline"
+                                            >
+                                                دانلود
+                                            </a>
+                                        ) : (
+                                            <span>{cellValue}</span>
+                                        )}
                                     </td>
-                                ))
-
-                            }
+                                );
+                            })}
 
                         </tr>
                     ))}
                 </tbody>
+
             </table>
         </div>
     );

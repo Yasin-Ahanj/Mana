@@ -19,7 +19,22 @@ const CourseBox = ({ slug, title, present_price, absence_price, duration, has_de
     const formatPrice = (number: number) => {
         return Number(number).toLocaleString();
     }
+    const formatDuration = (minutes: number) : string => {
+        const hours = Math.floor(minutes / 60);
+        const mins = minutes % 60;
 
+        let result = '';
+
+        if (hours > 0) {
+            result += `${hours} ساعت`;
+        }
+
+        if (mins > 0) {
+            result += `${hours > 0 ? ' و ' : ''}${mins} دقیقه`;
+        }
+
+        return result || '0 دقیقه';
+    };
 
     return (
         <div className="w-[90%] mx-auto  py-2 rounded-[2px] shadow-[0px_0px_4px_0px_rgba(0,0,0,0.25)]">
@@ -54,6 +69,10 @@ const CourseBox = ({ slug, title, present_price, absence_price, duration, has_de
                         <span className="text-[#000]/50">غیر حضوری</span>
                     </div>
                 </div>
+            </div>
+            <div className="flex justify-end mr-4 gap-4 my-4 text-[#000]/70">
+                <span dir="rtl">{formatDuration(Number(duration))}</span>
+                <span dir="rtl">مدت زمان دوره : </span>
             </div>
             <Link href={`/Pages/Courses/${id}`} className="w-[95%] border-1 border-[#F89535] mx-auto flex justify-center items-center border block mb-2 h-[48px]">صفحه دوره</Link>
         </div>

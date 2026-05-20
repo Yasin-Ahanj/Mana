@@ -113,7 +113,7 @@ const CategorieCourses = () => {
                                 title={course.title}
                                 present_price={course.total_price_present}
                                 absence_price={course.total_price_absence}
-                                duration={course.duration}
+                                duration={course.needed_time}
                                 has_degree={course.has_degree}
                                 id={course.id}
                             />

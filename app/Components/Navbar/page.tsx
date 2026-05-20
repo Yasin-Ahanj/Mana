@@ -267,13 +267,13 @@ const Navbar = () => {
                 </div>
             </div>
             <div className={`absolute bg-[#fff] h-fit w-full border-t-[1px] border-[#48484D]/40 z-10 hidden md:block  ${hoverToPermissions ? "md:block" : "md:hidden"}`} onMouseLeave={() => setHoverToPermissions(false)}>
-                <div className="w-[80%] mx-auto  grid grid-cols-4 grid-rows-1  p-4">
+                <div dir="rtl" className="w-[80%] mx-auto justify-items-center  grid grid-cols-4 grid-rows-1  p-4">
                     {Object.entries(permissions).map(
                         ([roleName, links]: [string, any[]], index: number) => (
                             <CategoryLearningInNav
                                 key={roleName}
                                 name={roleName}
-                                order={`col-start-4 row-start-${index + 1}`}
+                                order={`row-start-${index + 1}`}
                                 links={links.map(link => ({
                                     name: link.name,
                                     url: link.end_point,

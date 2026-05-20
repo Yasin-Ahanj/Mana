@@ -63,7 +63,7 @@ const Documents = () => {
         <div>
             <NavbarPersonalInfo />
             <PersonalId title="مشاهده کل مدارک" placeholder="کد ملی/نام" />
-            <TableHeader title="کلیه مدارک صادر شده"/>
+            <TableHeader title="کلیه مدارک صادر شده" discription=""/>
             <TableMaker data={TableData}/>
         </div>
     )
