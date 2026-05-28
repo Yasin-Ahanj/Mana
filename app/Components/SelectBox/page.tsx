@@ -14,7 +14,7 @@ type SelectBoxProps = {
     label: string;
     name: string;
     containerStyle?: string;
-    isNessesary?: boolean;
+    isNessesary?: boolean; 
     optionsStyle?: string;
 }
 const SelectBox = ({ options, onChange, value, style, label, name, containerStyle, isNessesary, optionsStyle }: SelectBoxProps) => {

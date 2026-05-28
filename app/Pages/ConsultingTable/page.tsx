@@ -5,8 +5,7 @@ import TableHeader from "@/app/Components/TableHeader/Page"
 import TableMaker from "@/app/Components/TableMaker/page"
 import { useState } from "react"
 
-const Waiting = () => {
-
+const ConsultingTable = () => {
     const [isWaiting, setIsWaiting] = useState(false)
     const waitChoosenDisplay = () => {
         setIsWaiting(true)
@@ -60,10 +59,10 @@ const Waiting = () => {
     return (
         <div>
             <NavbarPersonalInfo />
-            <PersonalId title="مشاهده و تتتتت" placeholder="شماره موبایل/نام" />
+            <PersonalId title="مشاهده مشاوره ها" placeholder="شماره موبایل/نام" />
             <div className="flex justify-end w-[95%] mt-[12px] gap-8">
                 <span onClick={waitChoosenDisplay} className={isWaiting == true ? 'bg-[#F89535] px-4 py-2 rounded-[12px]' : 'px-4 py-2 hover:cursor-pointer'}>در انتظار</span>
-                <span onClick={notWaitChoosenDisplay} className={isWaiting == false ? 'bg-[#F89535] px-4 py-2 rounded-[12px]' : 'px-4 py-2 hover:cursor-pointer'}>تمام شده</span>
+                <span onClick={notWaitChoosenDisplay} className={isWaiting == false ? 'bg-[#F89535] px-4 py-2 rounded-[12px]' : 'px-4 py-2 hover:cursor-pointer'}>انجام شده</span>
             </div>
             <TableHeader title="مخاطب های در انتظار پاسخ" discription=""/>
             <TableMaker data={TableData} />
@@ -71,4 +70,4 @@ const Waiting = () => {
     )
 }
 
-export default Waiting
+export default ConsultingTable

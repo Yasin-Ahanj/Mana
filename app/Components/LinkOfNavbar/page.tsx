@@ -12,7 +12,8 @@ type LinkOfNavbarProps = {
 
 };
 
-const LinkOfNavbar = ({ name, links , onSendData , desiredLink }: LinkOfNavbarProps) => {
+const LinkOfNavbar = ({ name, links, onSendData, desiredLink }: LinkOfNavbarProps) => {
+
 
 
   const handleClick = () => {
